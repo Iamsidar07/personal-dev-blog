@@ -1,4 +1,4 @@
-# Developer Blog
+# Developer DEV Blog
 
 ![Project Screenshot](/public/Screenshot%20from%202023-09-22%2015-48-45.png) 
 
@@ -17,7 +17,7 @@ This is a developer blog built with Next.js, Sanity CMS, and Tailwind CSS. It se
 
 ## Demo
 
-You can view a live demo of the blog [here](https://your-blog-url.com).
+You can view a live demo of the blog [here](https://personal-dev-blog-nu.vercel.app/).
 
 ## Features
 
@@ -35,11 +35,11 @@ To run this project locally, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/your-blog.git
+   git clone https://github.com/Iamsidar07/personal-dev-blog.git
    ```
 2. Navigate to the Project directory
     ```bash
-    cd your-blg
+    cd personal-dev-blog
     ```
 3. Install dependencies
     ```bash
