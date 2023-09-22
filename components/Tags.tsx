@@ -60,7 +60,7 @@ const Tags = ({ options }: TagsProps) => {
             </div>
             {isOpen && (
                 <ul
-                    className="origin-top-right absolute right-0 mt-2 w-32 rounded-lg shadow-lg bg-white dark:bg-zinc-900 ring-1 dark:ring-white/10 ring-opacity-5 transition-opacity duration-300 transform scale-100 z-10 py-3 gap-2"
+                    className="origin-top-right absolute left-0 sm:right-0 mt-2 w-fit sm:w-32 rounded-lg shadow-lg bg-white dark:bg-zinc-900 ring-1 dark:ring-white/10 ring-opacity-5 transition-opacity duration-300 transform scale-100 z-10 py-3 gap-2"
                     role="listbox"
                     aria-labelledby="options-menu"
                 >
