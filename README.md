@@ -1,10 +1,10 @@
 # Developer DEV Blog
 
-![Project Screenshot](/public/Screenshot%20from%202023-09-22%2015-48-45.png) 
+![Project Screenshot](/public/jpeg-optimizer_Screenshot%20from%202023-09-22%2015-48-45.png) 
 
-![Project Screenshot](/public/Screenshot%20from%202023-09-22%2015-49-20.png) 
+![Project Screenshot](/public/jpeg-optimizer_Screenshot%20from%202023-09-23%2014-29-31.png) 
 
-
+you can check GMatrix statstics of this app [here](https://gtmetrix.com/reports/personal-dev-blog-nu.vercel.app/nnDdoghE/)
 
 This is a developer blog built with Next.js, Sanity CMS, and Tailwind CSS. It serves as a platform for sharing code snippets, tutorials, and insights related to web development and programming.
 
