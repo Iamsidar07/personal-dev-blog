@@ -20,7 +20,7 @@ export async function generateMetadata(
     title,
     description: `Showing article ${title}`,
     openGraph: {
-      images: ['/manoj.png'],
+      images: ['https://pbs.twimg.com/profile_images/1663775518427344897/x_E7ceTt_400x400.jpg'],
     },
   }
 }

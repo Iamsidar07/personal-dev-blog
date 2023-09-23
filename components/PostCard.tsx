@@ -14,6 +14,7 @@ const PostCard = ({post}:PostCardProps) => {
                       src={post.mainImage}
                       alt={post.title}
                       fill
+                      priority
                       className='rounded-t-2xl absolute inset-0 hover:scale-125 duration-300 '
                   />
                   <div className='flex items-center gap-2 absolute top-4 left-4'>

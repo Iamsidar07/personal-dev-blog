@@ -12,7 +12,7 @@ const Header = () => {
         <Link href='/'>
           <div className='flex items-center gap-2 w-full'>
             <Image
-              src={'/manoj.png'}
+              src={'/manoj.svg'}
               width={50}
               height={50}
               alt='Manoj Logo'

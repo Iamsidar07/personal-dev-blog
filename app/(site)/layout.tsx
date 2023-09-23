@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     "theme-color": "rgb(255,255,255),rgb(24,24,27,1)",
     "color-scheme": "light dark",
     "twitter:card": "summary_large_image",
-    "twitter:image": "https://personal-dev-blog-nu.vercel.app/icon.png",
-    "og:image": "https://personal-dev-blog-nu.vercel.app/icon.png",
+    "twitter:image": "https://pbs.twimg.com/profile_images/1663775518427344897/x_E7ceTt_400x400.jpg",
+    "og:image": "https://pbs.twimg.com/profile_images/1663775518427344897/x_E7ceTt_400x400.jpg",
     "og:type": "website",
     "og:url":"https://personal-dev-blog-nu.vercel.app"
   }
