@@ -1,11 +1,20 @@
 "use client"
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 const ToggleButton = () => {
     const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
 
     const toggleTheme = () => {
         setTheme(theme == 'dark' ? 'light' : 'dark');
     };
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null
+    }
     return (
         <button
             onClick={toggleTheme}

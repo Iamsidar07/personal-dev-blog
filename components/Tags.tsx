@@ -74,7 +74,7 @@ const Tags = ({ options }: TagsProps) => {
                             All
                         </button>
                     </li>
-                    {options.map((option) => (
+                    {options?.map((option) => (
                         <li key={option._id}>
                             <button
                                 type="button"

@@ -32,7 +32,7 @@ export default async function Home({ searchParams }: HomeProps) {
     <main className="flex flex-col lg:flex-row lg:flex-wrap items-center lg:items-stretch gap-1 lg:gap-2 justify-end  min-h-screen p-4 lg:p-6">
       <CategoryList categories={categories} />
       {
-        posts.length > 0 ? (
+        posts?.length > 0 ? (
           <Posts posts={posts} tags={tags} />
         ) : (
           <div className="w-full p-6 flex-1">

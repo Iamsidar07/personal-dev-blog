@@ -31,7 +31,7 @@ const CategoryList = ({ categories }: CategoryListProps) => {
                     All
                 </li>
                 {
-                    categories.map((category) => <li className={`hover:bg-zinc-100 dark:hover:bg-zinc-800/90 py-3 px-4 rounded-full duration-200 cursor-pointer ${selectedCategory === category.title && "bg-teal-500"}`} onClick={() => handleClick(category.title)} key={category._id}>
+                    categories?.map((category) => <li className={`hover:bg-zinc-100 dark:hover:bg-zinc-800/90 py-3 px-4 rounded-full duration-200 cursor-pointer ${selectedCategory === category.title && "bg-teal-500"}`} onClick={() => handleClick(category.title)} key={category._id}>
                         {category.title}
                     </li>)
                 }

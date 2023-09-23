@@ -15,20 +15,20 @@ const ProfileComponent = ({ profile }: ProfileProps) => {
         <CgProfile size={25} className='text-zinc-950 dark:text-zinc-100 group-hover:text-teal-400 duration-200' />Profile</h2>
       <div className='bg-white mt-6 p-2 lg:p-6 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90'>
         <div className='w-full h-72 lg:h-52 relative'>
-          <Image src={profile.image} alt={profile.name} fill className='w-full h-full object-cover aspect-square rounded-2xl ring-2 ring-zinc-900/5 dark:ring-white/10' />
+          <Image src={profile?.image} alt={profile?.name} fill className='w-full h-full object-cover aspect-square rounded-2xl ring-2 ring-zinc-900/5 dark:ring-white/10' />
         </div>
         <div className='flex flex-col items-center w-full gap-1 mt-3 mb-2'>
-          <h3 className='text-lg lg:text-2xl font-bold'>{profile.name}</h3>
-          <p className='italic text-zinc-900 dark:text-zinc-400'>{profile.role}</p>
+          <h3 className='text-lg lg:text-2xl font-bold'>{profile?.name}</h3>
+          <p className='italic text-zinc-900 dark:text-zinc-400'>{profile?.role}</p>
         </div>
 
-        <PortableText value={profile.bio} components={RichTextComponents} />
+        <PortableText value={profile?.bio} components={RichTextComponents} />
       </div>
       <div className='mt-6 p-2 lg:p-6 bg-white/90 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90'>
         <h2>Socials</h2>
         <div className='flex items-center gap-2 justify-evenly mt-4 lg:mt-6 p-2'>
           {
-            Object.entries(profile.socialLinks).map(([key, value], index) => <Link target='_blank' title={key} href={`${value}`} key={index} className='bg-white/90 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90 p-3'>
+            Object.entries(profile?.socialLinks).map(([key, value], index) => <Link target='_blank' title={key} href={`${value}`} key={index} className='bg-white/90 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90 p-3'>
               {Icons[key as keyof typeof Icons]}
             </Link>)
           }

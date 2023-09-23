@@ -18,7 +18,7 @@ const Posts = ({ posts, tags }: PostsProps) => {
                 <Order />
             </div>
             {
-                posts.map((post) => <div key={post._id} className='bg-zinc-50  ring-white dark:bg-zinc-700 rounded-2xl w-full h-full  bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90 group '>
+                posts?.map((post) => <div key={post._id} className='bg-zinc-50  ring-white dark:bg-zinc-700 rounded-2xl w-full h-full  bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90 group '>
                     <Link href={`/post/${post.slug}?post_id=${post._id}`}>
                         <div className='relative w-full h-64 sm:h-72 overflow-hidden rounded-t-2xl'>
                             <Image
