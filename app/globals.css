@@ -29,7 +29,10 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  @apply font-poppins;
 }
 
 h1,
@@ -38,25 +41,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Syne', sans-serif;
-  font-weight: bold;
+  @apply font-syne font-bold;
 }
 
 h1 {
-  font-size: 2.5rem;
+  @apply text-2xl lg:text-6xl;
 }
+
 h2 {
-  font-size: 1.5rem;
+  @apply text-xl lg:text-4xl;
 }
+
 h3 {
-  font-size: 1.25rem;
+  @apply text-lg lg:text-2xl;
 }
+
 h4 {
-  font-size: 1.1rem;
-}
-h5 {
-  font-size: 1.02rem;
-}
-h6 {
-  font-size: 1.02rem;
+  @apply text-base lg:text-lg;
 }
