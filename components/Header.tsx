@@ -18,34 +18,34 @@ const Header = () => {
               alt='Manoj Logo'
               className='rounded-full object-cover w-12 h-12'
             />
-            <h1>DEV</h1>
+            <h2>DEV</h2>
           </div>
         </Link>
         <ul className='items-center gap-2 rounded-full text-zinc-800 dark:text-zinc-200 bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 shadow-lg shadow-zinc-800/5 px-3 hidden sm:flex'>
-          <li className='px-3 py-2 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer'>
-            <Link href='/'>
+          <Link href='/'>
+            <li className='px-3 py-2 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer'>
               Home
-            </Link>
-          </li>
-          <li className='px-3 py-2 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer'>
-            <Link href='/'>
+            </li>
+          </Link>
+          <Link href='/'>
+            <li className='px-3 py-2 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer'>
               About
-            </Link>
-          </li>
+            </li>
+          </Link>
         </ul>
 
         {
           isShaown && (<ul className='flex flex-col absolute top-24 right-4 min-w-[320px] min-h-[250px] h-fit p-4 rounded-2xl items-center gap-2  text-zinc-800 dark:text-zinc-200 bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 shadow-lg shadow-zinc-800/5 px-3'>
-            <li className='px-3 py-2 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer'>
-              <Link href='/'>
+            <Link href='/'>
+              <li className='px-3 py-2 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer'>
                 Home
-              </Link>
-            </li>
-            <li className='px-3 py-2 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer'>
-              <Link href='/'>
+              </li>
+            </Link>
+            <Link href='/'>
+              <li className='px-3 py-2 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer'>
                 About
-              </Link>
-            </li>
+              </li>
+            </Link>
           </ul>)
         }
         <div className='flex items-center gap-2'>

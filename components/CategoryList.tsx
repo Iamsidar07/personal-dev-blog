@@ -23,7 +23,7 @@ const CategoryList = ({ categories }: CategoryListProps) => {
         router.push(url, { scroll: false })
     }
     return (
-        <div className='flex flex-col gap-4 lg:flex-[0.3] w-full h-full lg:sticky  lg:top-[109px]'>
+        <section className='flex flex-col gap-4 lg:flex-[0.3] w-full h-full lg:sticky  lg:top-[109px]'>
             <h2 className='px-4 flex items-center gap-2 group hover:text-teal-400 duration-200'>Categories
                 <BiCategoryAlt size={25} className='text-zinc-950 dark:text-zinc-100 group-hover:text-teal-400 duration-200' /></h2>
             <ul className='flex flex-col gap-2'>
@@ -36,7 +36,7 @@ const CategoryList = ({ categories }: CategoryListProps) => {
                     </li>)
                 }
             </ul>
-        </div>
+        </section>
     )
 }
 

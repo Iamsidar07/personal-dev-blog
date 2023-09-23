@@ -10,7 +10,8 @@ interface ProfileProps {
 }
 const ProfileComponent = ({ profile }: ProfileProps) => {
   return (
-    <div className='flex flex-col w-full lg:w-72 h-full lg:sticky lg:top-[109px] mt-12 sm:mt-0'>
+    <section className='flex flex-col w-full lg:w-72 h-full lg:sticky lg:top-[109px] mt-12 sm:mt-0'>
+
       <h2 className='flex items-center gap-2 hover:text-teal-400 group duration-200'>
         <CgProfile size={25} className='text-zinc-950 dark:text-zinc-100 group-hover:text-teal-400 duration-200' />Profile</h2>
       <div className='bg-white mt-6 p-2 lg:p-6 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90'>
@@ -21,7 +22,7 @@ const ProfileComponent = ({ profile }: ProfileProps) => {
           <h3 className='text-lg lg:text-2xl font-bold'>{profile?.name}</h3>
           <p className='italic text-zinc-900 dark:text-zinc-400'>{profile?.role}</p>
         </div>
-
+        
         <PortableText value={profile?.bio} components={RichTextComponents} />
       </div>
       <div className='mt-6 p-2 lg:p-6 bg-white/90 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90'>
@@ -35,7 +36,7 @@ const ProfileComponent = ({ profile }: ProfileProps) => {
         </div>
 
       </div>
-    </div>
+    </section>
   )
 }
 

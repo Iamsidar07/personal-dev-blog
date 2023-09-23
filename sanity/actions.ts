@@ -48,20 +48,6 @@ export async function getCategories() {
     }
 }
 
-export async function getAuthors() {
-    try {
-        const authors = await client.fetch(groq`*[_type=="author"]{
-            _id,
-            name,
-            "slug": slug.current,
-            "image": image.asset->url,
-            bio
-        }`);
-        return authors;
-    } catch (error: any) {
-        console.log('SOMETHING WENT WRONG!!', error.message);
-    }
-}
 export async function getTags() {
     try {
         const tags = await client.fetch(groq`*[_type=="tag"]{

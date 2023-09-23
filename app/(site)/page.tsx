@@ -35,9 +35,9 @@ export default async function Home({ searchParams }: HomeProps) {
         posts?.length > 0 ? (
           <Posts posts={posts} tags={tags} />
         ) : (
-          <div className="w-full p-6 flex-1">
+          <section className="w-full p-6 flex-1">
             <h1 className="text-center">No posts</h1>
-          </div>
+          </section>
         )
       }
       <ProfileComponent profile={profile} />

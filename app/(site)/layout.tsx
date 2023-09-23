@@ -4,7 +4,16 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "Manoj DEV blog",
-  description: "Manoj's developer blog where I share my learning."
+  description: "Manoj's developer blog where I share my learning.",
+  other: {
+    "theme-color": "rgb(255,255,255),rgb(24,24,27,1)",
+    "color-scheme": "light dark",
+    "twitter:card": "summary_large_image",
+    "twitter:image": "https://personal-dev-blog-nu.vercel.app/icon.png",
+    "og:image": "https://personal-dev-blog-nu.vercel.app/icon.png",
+    "og:type": "website",
+    "og:url":"https://personal-dev-blog-nu.vercel.app"
+  }
 }
 
 export default function RootLayout({
