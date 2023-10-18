@@ -3,11 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 1.075rem;
   @apply font-poppins;
 }
 
@@ -25,17 +25,9 @@ h6 {
 }
 
 h1 {
-  @apply text-2xl lg:text-6xl;
+  @apply text-2xl lg:text-5xl;
 }
 
 h2 {
-  @apply text-xl lg:text-4xl;
-}
-
-h3 {
-  @apply text-lg lg:text-2xl;
-}
-
-h4 {
-  @apply text-base lg:text-lg;
+  @apply text-xl lg:text-3xl;
 }

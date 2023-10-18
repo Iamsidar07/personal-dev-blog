@@ -15,7 +15,6 @@ interface HomeProps {
 
 export const revalidate = 900; // 15 minutes -> 15x60=900 seconds
 
-
 export default async function Home({ searchParams }: HomeProps) {
   const { order, tag, query, category } = searchParams;
   const posts: Post[] = await getPosts({
@@ -29,7 +28,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const tags: Tag[] = await getTags();
   const profile: Profile = await getProfile();
   return (
-    <main className="flex flex-col lg:flex-row lg:flex-wrap items-center lg:items-stretch gap-1 lg:gap-2 justify-end  min-h-screen p-4 lg:p-6">
+    <main className="flex flex-col lg:flex-row lg:flex-wrap items-center lg:items-start gap-2 lg:gap-2 justify-end pt-6 px-1.5 min-h-screen">
       <CategoryList categories={categories} />
       {
         posts?.length > 0 ? (

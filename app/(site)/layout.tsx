@@ -40,11 +40,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ThemeProviderComponent>
-        <body
-          className={`${syne.variable} font-syne ${poopins.variable} font-poppins flex w-full bg-zinc-50 dark:bg-black text-zinc-800 dark:text-zinc-200`}
-        >
-          <div>
+      <body>
+        <ThemeProviderComponent>
+          <div
+            className={`${syne.variable} font-syne ${poopins.variable} font-poppins flex w-full bg-zinc-50 dark:bg-black text-zinc-800 dark:text-zinc-200`}
+          >
             <div className="fixed inset-0 flex justify-center overflow-hidden overflow-y-scroll">
               <div className="flex w-full max-w-7xl">
                 <div className="w-full h-fit min-h-screen backdrop-blur bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
@@ -62,8 +62,8 @@ export default function RootLayout({
             <div className="moving-div"></div>
             <div className="moving-div"></div>
           </div>
-        </body>
-      </ThemeProviderComponent>
+        </ThemeProviderComponent>
+      </body>
     </html>
   );
 }

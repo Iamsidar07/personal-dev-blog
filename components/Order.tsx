@@ -21,10 +21,10 @@ const Order = () => {
     }
     return (
         <div className='flex items-center gap-2'>
-            <button className={`bg-transparent outline-none border-none hover:font-bold duration-200 ${order == "asc" && "font-bold font-mono"}`} onClick={() => handleClick("asc")} title="Sort Ascending Order">
+            <button className={`h-full w-12 flex items-center justify-center outline-none border-none hover:font-bold duration-200  bg-white/90 dark:bg-zinc-800/90 ring-1 rounded ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90 ${order == "asc" && "font-bold"}`} onClick={() => handleClick("asc")} title="Sort Ascending Order">
                 <PiSortAscendingThin size={25} className='text-zinc-950 dark:text-zinc-100 hover:text-teal-400 dark:hover:text-teal-600 duration-200' />
             </button>
-            <button className={`bg-transparent outline-none border-none hover:font-bold duration-200 ${order == "desc" && "font-bold font-mono"}`} onClick={() => handleClick("desc")} title="Sort Descending Order">
+            <button className={` h-full  w-12 flex items-center justify-center outline-none border-none hover:font-bold duration-200  bg-white/90 dark:bg-zinc-800/90 ring-1 rounded ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90 ${order == "desc" && "font-bold"}`} onClick={() => handleClick("desc")} title="Sort Descending Order">
                 <PiSortDescendingThin size={25} className='text-zinc-950 dark:text-zinc-100 hover:text-teal-400 dark:hover:text-teal-600 duration-200' />
             </button>
         </div>

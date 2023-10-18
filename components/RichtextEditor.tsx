@@ -1,6 +1,7 @@
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
+import Code from "./Code";
 export const RichTextComponents = {
   types: {
     image: ({ value }: any) => (
@@ -12,6 +13,7 @@ export const RichTextComponents = {
         className="h-full w-full my-6 max-h-[420px]  rounded-2xl mx-auto object-cover aspect-[9/7]"
       />
     ),
+    code: ({ value }: any) => <Code value={value} />,
     callToAction: ({ value, isInline }: any) =>
       isInline ? (
         <a href={value.url}>{value.text}</a>
@@ -38,6 +40,7 @@ export const RichTextComponents = {
       </blockquote>
     ),
   },
+
   list: {
     bullet: ({ children }: any) => (
       <ul className="ml-10 py-10 space-y-5 list-disc">{children}</ul>
@@ -50,6 +53,7 @@ export const RichTextComponents = {
     em: ({ children }: any) => (
       <em className="text-gray-600 font-semibold">{children}</em>
     ),
+
     link: ({ value, children }: any) => {
       const target = (value?.href || "").startsWith("http")
         ? "_blank"

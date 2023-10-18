@@ -2,7 +2,6 @@ import { Profile } from '@/types'
 import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CgProfile } from "react-icons/cg"
 import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 import { RichTextComponents } from '.'
 interface ProfileProps {
@@ -10,13 +9,10 @@ interface ProfileProps {
 }
 const ProfileComponent = ({ profile }: ProfileProps) => {
   return (
-    <section className='flex flex-col w-full lg:w-72 h-full lg:sticky lg:top-[109px] mt-12 sm:mt-0'>
-
-      <h2 className='flex items-center gap-2 hover:text-teal-400 group duration-200'>
-        <CgProfile size={25} className='text-zinc-950 dark:text-zinc-100 group-hover:text-teal-400 duration-200' />Profile</h2>
-      <div className='bg-white mt-6 p-2 lg:p-6 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90'>
-        <div className='w-full h-72 lg:h-52 relative'>
-          <Image src={profile?.image} alt={profile?.name} fill className='w-full h-full object-cover aspect-square rounded-2xl ring-2 ring-zinc-900/5 dark:ring-white/10' />
+    <section className='flex flex-col w-full lg:w-72 h-full lg:sticky lg:top-20 pb-6'>
+      <div className='bg-white p-2 dark:bg-zinc-800/90 ring-1 rounded ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90'>
+        <div className='w-full h-72 lg:h-64 relative'>
+          <Image src={profile?.image} alt={profile?.name} fill className='w-full h-full object-cover aspect-square rounded ring-2 ring-zinc-900/5 dark:ring-white/10' />
         </div>
         <div className='flex flex-col items-center w-full gap-1 mt-3 mb-2'>
           <h3 className='text-lg lg:text-2xl font-bold'>{profile?.name}</h3>
@@ -25,7 +21,7 @@ const ProfileComponent = ({ profile }: ProfileProps) => {
         
         <PortableText value={profile?.bio} components={RichTextComponents} />
       </div>
-      <div className='mt-6 p-2 lg:p-6 bg-white/90 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90'>
+      <div className='mt-2 p-2 lg:p-6 bg-white/90 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90'>
         <h2>Socials</h2>
         <div className='flex items-center gap-2 justify-evenly mt-4 lg:mt-6 p-2'>
           {

@@ -15,9 +15,11 @@ const Posts = ({ posts, tags }: PostsProps) => {
                 <Search />
                 <Order />
             </div>
+            <div className='mt-6'>
             {
                 posts?.map((post) => <PostCard key={post._id} post={post} />)
             }
+            </div>
 
         </section>
     )
