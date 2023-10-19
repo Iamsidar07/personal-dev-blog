@@ -23,16 +23,16 @@ export const RichTextComponents = {
   },
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-5xl font-bold py-10">{children}</h1>
+      <h1 className="text-5xl font-bold py-6">{children}</h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="text-4xl font-bold py-10">{children}</h2>
+      <h2 className="text-4xl font-bold py-6">{children}</h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-3xl font-bold py-10">{children}</h3>
+      <h3 className="text-3xl font-bold py-6">{children}</h3>
     ),
     h4: ({ children }: any) => (
-      <h4 className="text-2xl font-bold py-10">{children}</h4>
+      <h4 className="text-2xl font-bold py-6">{children}</h4>
     ),
     blockquote: ({ children }: any) => (
       <blockquote className="border-l-purple-500 border-l-4 p-4 italic my-4">
@@ -43,7 +43,7 @@ export const RichTextComponents = {
 
   list: {
     bullet: ({ children }: any) => (
-      <ul className="ml-10 py-10 space-y-5 list-disc">{children}</ul>
+      <ul className="ml-10 py-6 space-y-5 list-disc">{children}</ul>
     ),
     number: ({ children }: any) => (
       <ol className="mt-10 list-decimal p-5">{children}</ol>

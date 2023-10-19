@@ -18,7 +18,7 @@ const PostCard = ({ post }: PostCardProps) => {
             className="rounded-t absolute inset-0 hover:scale-105 duration-300 object-cover "
           />
           <div className="flex items-center gap-2 absolute top-4 left-4">
-            <span className="px-7 py-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full">
+            <span className="px-5 py-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full text-sm">
               {post.categories[0]}
             </span>
           </div>
