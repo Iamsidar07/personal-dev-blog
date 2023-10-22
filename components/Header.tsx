@@ -35,7 +35,7 @@ const Header = () => {
         </ul>
 
         {
-          isShown && (<ul className='flex flex-col absolute top-24 right-4 min-w-[320px] min-h-[250px] h-fit p-4 rounded-2xl items-center gap-2  text-zinc-800 dark:text-zinc-200 bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 shadow-lg shadow-zinc-800/5 px-3'>
+          isShown && (<ul className='flex flex-col absolute top-14 right-4 min-w-[50%] min-h-[150px] h-fit p-4 rounded-2xl items-center gap-2  text-zinc-800 dark:text-zinc-200 bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 shadow-lg shadow-zinc-800/5 px-3'>
             <Link href='https://github.com/iamsidar07' target='_blank'>
               <li className='px-3 py-1 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer'>
                 Github

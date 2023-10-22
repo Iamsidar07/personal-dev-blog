@@ -47,7 +47,7 @@ const PostPage = async ({ searchParams }: PostPageProps) => {
             height={1080}
             className="h-72 object-cover "
           />
-          <div className="p-2 md:p-6">
+          <div className="px-4 py-3 md:p-6">
             <span className="px-6 py-1.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-sm">
               {post.categories[0]}
             </span>
@@ -61,10 +61,10 @@ const PostPage = async ({ searchParams }: PostPageProps) => {
                   height={30}
                   className="rounded-full object-cover"
                 />
-                <span className="text-slate-800 text-xs dark:text-zinc-500 pr-3 border-r-2 dark:border-r-zinc-600">
+                <span className="text-slate-800 text-sm dark:text-zinc-500 pr-3 border-r-2 dark:border-r-zinc-600">
                   {post.author.name}
                 </span>
-                <span className="text-slate-800 text-xs dark:text-zinc-500">
+                <span className="text-slate-800 text-sm dark:text-zinc-500">
                   {relativeDate(new Date(post.publishedAt))}
                 </span>
               </div>
@@ -72,7 +72,7 @@ const PostPage = async ({ searchParams }: PostPageProps) => {
                 {post.tags.map((category) => (
                   <span
                     key={category}
-                    className="text-zinc-900 dark:text-zinc-500 px-2.5 py-1 dark:bg-zinc-800/10 rounded-full ring-1 ring-white/10 border dark:border-none dark:ring-white/10 lg:shadow-lg lg:shadow-zinc-800/5 text-xs"
+                    className="text-zinc-900 dark:text-zinc-500 px-2.5 py-1 dark:bg-zinc-800/10 rounded-full ring-1 ring-white/10 border dark:border-none dark:ring-white/10 lg:shadow-lg lg:shadow-zinc-800/5 text-sm"
                   >
                     #{category}
                   </span>

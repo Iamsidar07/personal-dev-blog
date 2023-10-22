@@ -39,7 +39,7 @@ const PostCard = ({ post }: PostCardProps) => {
             {post.tags.map((tag, index) => (
               <span
                 key={index}
-                className="text-zinc-900 dark:text-zinc-500 px-2.5 py-1 dark:bg-zinc-800/10 rounded-full ring-1 ring-white/90 border dark:border-none dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/5 text-xs"
+                className="text-zinc-900 dark:text-zinc-500 px-2.5 py-1 dark:bg-zinc-800/10 rounded-full ring-1 ring-white/90 border dark:border-none dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/5 text-sm"
               >
                 {tag}
               </span>

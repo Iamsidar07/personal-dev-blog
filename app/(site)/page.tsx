@@ -28,7 +28,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const tags: Tag[] = await getTags();
   const profile: Profile = await getProfile();
   return (
-    <main className="flex flex-col lg:flex-row lg:flex-wrap items-center lg:items-start gap-2 lg:gap-2 justify-end pt-6 px-1.5 min-h-screen">
+    <main className="flex flex-col lg:flex-row lg:flex-wrap items-center lg:items-start gap-6 lg:gap-2 justify-end pt-6 px-1.5 min-h-screen">
       <CategoryList categories={categories} />
       {
         posts?.length > 0 ? (
