@@ -35,7 +35,7 @@ export const RichTextComponents = {
       <h4 className="text-2xl font-bold py-6">{children}</h4>
     ),
     blockquote: ({ children }: any) => (
-      <blockquote className="border-l-purple-500 border-l-4 p-4 italic my-4">
+      <blockquote className="rounded-2xl border-l-gray-300 dark:border-l-zinc-500 border-l-4 p-4 italic my-4">
         {children}
       </blockquote>
     ),
@@ -43,7 +43,9 @@ export const RichTextComponents = {
 
   list: {
     bullet: ({ children }: any) => (
-      <ul className="ml-10 py-6 space-y-5 list-disc">{children}</ul>
+      <ul className="ml-10 py-6 space-y-5 list-disc marker:text-yellow-300">
+        {children}
+      </ul>
     ),
     number: ({ children }: any) => (
       <ol className="mt-10 list-decimal p-5">{children}</ol>
@@ -51,7 +53,9 @@ export const RichTextComponents = {
   },
   marks: {
     em: ({ children }: any) => (
-      <em className="text-gray-600 font-semibold">{children}</em>
+      <em className="text-gray-600 font-semibold dark:text-yellow-700">
+        {children}
+      </em>
     ),
 
     link: ({ value, children }: any) => {
@@ -66,7 +70,7 @@ export const RichTextComponents = {
           href={value.href}
           rel={rel}
           target={target}
-          className="underline decoration-blue-600 hover:decoration-blue-400 duration-200"
+          className="text-yellow-500 font-bold italic px-1.5 underline decoration-yellow-600 hover:decoration-yellow-400 duration-200"
         >
           {children}
         </Link>

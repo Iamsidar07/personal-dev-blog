@@ -1,9 +1,8 @@
 import { RichTextComponents } from "@/components";
 import { getPosts } from "@/sanity/actions";
 import { Post } from "@/types";
-import { formateDate } from "@/utils";
+import { relativeDate } from "@/utils";
 import { PortableText } from "@portabletext/react";
-import { format } from "date-fns";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -16,7 +15,9 @@ export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
   const { slug } = params;
-  const title = slug.replaceAll("-", " ");
+  const title =
+    slug.replaceAll("-", " ")[0].toUpperCase() +
+    slug.replaceAll("-", " ").slice(1);
   return {
     title,
     description: `Showing article ${title}`,
@@ -64,7 +65,7 @@ const PostPage = async ({ searchParams }: PostPageProps) => {
                   {post.author.name}
                 </span>
                 <span className="text-slate-800 text-xs dark:text-zinc-500">
-                  {format(new Date(post.publishedAt)!, "dd.MM.yyyy")}
+                  {relativeDate(new Date(post.publishedAt))}
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -78,7 +79,7 @@ const PostPage = async ({ searchParams }: PostPageProps) => {
                 ))}
               </div>
             </section>
-            <section className="mt-12">
+            <section className="mt-12 max-w-4xl mx-auto">
               <PortableText value={post.body} components={RichTextComponents} />
             </section>
           </div>

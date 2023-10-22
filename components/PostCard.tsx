@@ -2,9 +2,14 @@ import { Post } from "@/types";
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import { relativeDate } from "@/utils";
+dayjs.extend(relativeTime);
 interface PostCardProps {
   post: Post;
 }
+
 const PostCard = ({ post }: PostCardProps) => {
   return (
     <div className="bg-zinc-50  ring-white dark:bg-zinc-700 rounded w-full h-full  bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90 group max-w-xl mx-auto">
@@ -28,7 +33,7 @@ const PostCard = ({ post }: PostCardProps) => {
             {post.title}
           </h2>
           <p className="text-slate-800 dark:text-zinc-500">
-            {format(new Date(post.publishedAt)!, "dd.MM.yyyy")}
+            {relativeDate(new Date(post.publishedAt))}
           </p>
           <p className="flex items-center gap-2">
             {post.tags.map((tag, index) => (

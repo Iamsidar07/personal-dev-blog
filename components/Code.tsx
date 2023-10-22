@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { BsCheck2 } from "react-icons/bs";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 const Code = ({ value }: any) => {
   const [isCopied, setIsCopied] = useState(false);
   if (!value || !value.code) {
@@ -16,9 +16,8 @@ const Code = ({ value }: any) => {
         language={language === "sh" ? "bash" : language ?? "text"}
         showLineNumbers
         wrapLines
-        wrapLongLines
-        customStyle={{ borderRadius: 10 }}
-        style={coldarkDark}
+        customStyle={{ borderRadius: 5 }}
+        style={dracula}
       >
         {code}
       </SyntaxHighlighter>
