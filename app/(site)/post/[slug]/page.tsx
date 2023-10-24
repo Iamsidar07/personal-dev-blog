@@ -45,13 +45,13 @@ const PostPage = async ({ searchParams }: PostPageProps) => {
             alt="Blog post image"
             width={1920}
             height={1080}
-            className="h-72 object-cover "
+            className="h-48 lg:h-72 object-cover "
           />
           <div className="px-4 py-3 md:p-6">
             <span className="px-6 py-1.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-sm">
               {post.categories[0]}
             </span>
-            <section className="flex flex-col gap-2 my-4">
+            <section className="flex flex-col gap-2 my-4 px-2.5">
               <h1 className="text-2xl lg:text-6xl font-bold">{post.title}</h1>
               <div className="flex items-center gap-1.5">
                 <Image

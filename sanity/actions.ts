@@ -1,24 +1,30 @@
 import { groq } from "next-sanity";
 import { client } from "./lib/client";
-import { PrepareQuery } from "./utils";
+import { prepareQuery } from "./utils";
 
 interface GetPostsParams {
-    postId?: string,
-    query?: string,
-    order?: string,
-    tag?: string,
-    category?: string
+  postId?: string;
+  query?: string;
+  order?: string;
+  tag?: string;
+  category?: string;
 }
 
-export async function getPosts({ postId, query, order, category, tag }: GetPostsParams) {
-    try {
-        const posts = await client.fetch(groq`${PrepareQuery({
-            type: "post",
-            query,
-            category,
-            tag,
-            id: postId
-        })}{
+export async function getPosts({
+  postId,
+  query,
+  order,
+  category,
+  tag,
+}: GetPostsParams) {
+  try {
+    const posts = await client.fetch(groq`${prepareQuery({
+      type: "post",
+      query,
+      category,
+      tag,
+      id: postId,
+    })}{
             _id,
             title,
             "slug": slug.current,
@@ -29,40 +35,40 @@ export async function getPosts({ postId, query, order, category, tag }: GetPosts
             publishedAt,
             body
         }${postId ? "[0]" : "[0...100]"}`);
-        return posts;
-    } catch (error: any) {
-        console.log("ERROR: while querying data.", error)
-    }
+    return posts;
+  } catch (error: any) {
+    console.log("ERROR: while querying data.", error);
+  }
 }
 
 export async function getCategories() {
-    try {
-        const categories = await client.fetch(groq`*[_type=="category"]{
+  try {
+    const categories = await client.fetch(groq`*[_type=="category"]{
             _id,
             title,
             description
         }`);
-        return categories;
-    } catch (error: any) {
-        console.log('SOMETHING WENT WRONG!!', error.message)
-    }
+    return categories;
+  } catch (error: any) {
+    console.log("SOMETHING WENT WRONG!!", error.message);
+  }
 }
 
 export async function getTags() {
-    try {
-        const tags = await client.fetch(groq`*[_type=="tag"]{
+  try {
+    const tags = await client.fetch(groq`*[_type=="tag"]{
             _id,
             title
         }`);
-        return tags;
-    } catch (error: any) {
-        console.log('SOMETHING WENT WRONG!!', error.message);
-    }
+    return tags;
+  } catch (error: any) {
+    console.log("SOMETHING WENT WRONG!!", error.message);
+  }
 }
 
 export async function getProfile() {
-    try {
-        const profile = await client.fetch(groq`*[_type=="profile"]{
+  try {
+    const profile = await client.fetch(groq`*[_type=="profile"]{
             _id,
             name,
             "image":image.asset->url,
@@ -70,8 +76,8 @@ export async function getProfile() {
             role,
             socialLinks,
         }[0]`);
-        return profile;
-    } catch (error: any) {
-        console.log('SOMETHING WENT WRONG!!', error.message);
-    }
+    return profile;
+  } catch (error: any) {
+    console.log("SOMETHING WENT WRONG!!", error.message);
+  }
 }
