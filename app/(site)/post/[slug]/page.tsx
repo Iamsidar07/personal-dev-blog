@@ -44,7 +44,7 @@ const PostPage = async ({ params }: PostPageProps) => {
   return (
     <main className="flex flex-col min-h-screen">
       {post && (
-        <div className="">
+        <div className="px-5 sm:px-0">
           <div >
             <section className="block text-zinc-100 bg-slate-100 dark:bg-zinc-800 w-full relative z-0">
               <div className="pt-1 max-w-7xl mx-auto px-5 sm:px-10">
