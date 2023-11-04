@@ -12,3 +12,16 @@ html {
   @apply duration-200;
 }
 
+.animate-theme {
+  animation: theme-animation 500ms linear 0s 1;
+}
+
+@keyframes theme-animation {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
