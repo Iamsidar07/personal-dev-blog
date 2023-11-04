@@ -5,13 +5,12 @@ import Code from "./Code";
 export const RichTextComponents = {
   types: {
     image: ({ value }: any) => (
-      <Image
-        alt="Blog featured image"
-        src={urlForImage(value).url()}
-        width={1920}
-        height={1080}
-        className="h-full w-full my-6 max-h-[320px] mx-auto object-cover aspect-[9/7]"
-      />
+      <div className="-px-6 mt-12 mb-24">
+        <div className="relative -mb-12">
+          <svg aria-hidden="true" width="1032" height="548" className="w-full h-auto block pointer-events-none" ></svg>
+          <Image src={urlForImage(value).url()} alt={"Blog Featured image"} width={1600} height={850} className="absolute top-0 left-0 w-full h-full object-cover rounded-lg" />
+        </div>
+      </div>
     ),
     code: ({ value }: any) => <Code value={value} />,
     callToAction: ({ value, isInline }: any) =>
@@ -22,12 +21,12 @@ export const RichTextComponents = {
       ),
   },
   block: {
-    h1: ({ children }: any) => <h1 className="py-4">{children}</h1>,
-    h2: ({ children }: any) => <h2 className="py-4">{children}</h2>,
-    h3: ({ children }: any) => <h3 className="py-4">{children}</h3>,
-    h4: ({ children }: any) => <h4 className="py-4">{children}</h4>,
+    h1: ({ children }: any) => <h1 className="py-4 text-xl sm:text-6xl font-bold hover:underline">{children}</h1>,
+    h2: ({ children }: any) => <h2 className="py-4 text-lg sm:text-4xl font-bold hover:underline">{children}</h2>,
+    h3: ({ children }: any) => <h3 className="py-4 text-base sm:text-2xl font-bold hover:underline">{children}</h3>,
+    h4: ({ children }: any) => <h4 className="py-4 text-base sm:text-xl font-bold hover:underline">{children}</h4>,
     blockquote: ({ children }: any) => (
-      <blockquote className="rounded-lg border-l-teal-600 border-l-4 p-4 italic my-2">
+      <blockquote className="border-blue-600 border-l-4 p-4 italic my-2">
         {children}
       </blockquote>
     ),
@@ -58,7 +57,7 @@ export const RichTextComponents = {
           href={value.href}
           rel={rel}
           target={target}
-          className=" font-bold italic px-1.5 underline decoration-yellow-600 hover:decoration-yellow-400 duration-200"
+          className=" font-bold italic px-1.5 underline decoration-blue-600 hover:decoration-blue-400 duration-200"
         >
           {children}
         </Link>

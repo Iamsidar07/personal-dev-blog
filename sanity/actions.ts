@@ -8,6 +8,7 @@ interface GetPostsParams {
   order?: string;
   tag?: string;
   category?: string;
+  slug?: string
 }
 
 export async function getPosts({
@@ -16,6 +17,7 @@ export async function getPosts({
   order,
   category,
   tag,
+  slug
 }: GetPostsParams) {
   try {
     const posts = await client.fetch(groq`${prepareQuery({
@@ -23,6 +25,7 @@ export async function getPosts({
       query,
       category,
       tag,
+      slug,
       id: postId,
     })}{
             _id,
@@ -30,39 +33,15 @@ export async function getPosts({
             "slug": slug.current,
             "author": author->{name,"image": image.asset->url},
             "mainImage": mainImage.asset->url,
-            "categories": categories[]->title,
-            "tags": tags[]->title,
+            "category": category,
+            "tags": tags,
             publishedAt,
+            description,
             body
-        }${postId ? "[0]" : "[0...100]"}`);
+        }${slug ? "[0]" : "[0...23]"}`);
     return posts;
   } catch (error: any) {
     console.log("ERROR: while querying data.", error);
-  }
-}
-
-export async function getCategories() {
-  try {
-    const categories = await client.fetch(groq`*[_type=="category"]{
-            _id,
-            title,
-            description
-        }`);
-    return categories;
-  } catch (error: any) {
-    console.log("SOMETHING WENT WRONG!!", error.message);
-  }
-}
-
-export async function getTags() {
-  try {
-    const tags = await client.fetch(groq`*[_type=="tag"]{
-            _id,
-            title
-        }`);
-    return tags;
-  } catch (error: any) {
-    console.log("SOMETHING WENT WRONG!!", error.message);
   }
 }
 

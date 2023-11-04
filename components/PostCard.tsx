@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { relativeDate } from "@/utils";
+import { formatDate } from "@/utils";
 dayjs.extend(relativeTime);
 interface PostCardProps {
   post: Post;
@@ -11,41 +11,42 @@ interface PostCardProps {
 
 const PostCard = ({ post }: PostCardProps) => {
   return (
-    <div className="bg-zinc-50  ring-white dark:bg-zinc-700 rounded-lg w-full h-full  bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90 group max-w-xl mx-auto">
-      <Link href={`/post/${post.slug}?post_id=${post._id}`}>
-        <div className="relative w-full h-64 sm:h-72 overflow-hidden rounded-t-lg">
+    <div className="w-full lg:max-w-[698px]">
+      <article className="py-4 flex flex-col">
+        <Link href={`/post/${post.slug}`} className="mb-3 w-full rounded-lg h-[235px] sm:h-[330px] lg:h-[370px] block relative overflow-hidden rounded-t-lg">
           <Image
             src={post.mainImage}
             alt={post.title}
-            fill
-            priority
-            className="rounded-t-lg absolute inset-0 hover:scale-105 duration-300 object-cover "
+            width={800}
+            height={425}
+            className="object-cover rounded-lg hover:scale-105 duration-700 ease-linear absolute top-0 left-0 h-full block w-full"
           />
-          <div className="flex items-center gap-2 absolute top-4 left-4">
-            <span className="px-5 py-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full text-sm">
-              {post.categories[0]}
-            </span>
+        </Link>
+        <div className="mb-1">
+          <Link href={`?category=${post.category}`}>
+            <p className="bg-gradient-to-r from-purple-600 to-red-600 inline-block text-transparent bg-clip-text font-bold">{post.category}</p>
+          </Link>
+        </div>
+        <h3 className="text-4xl font-bold hover:text-blue-700 hover:underline hover:underline-offset-1 mb-3">
+          <Link href={`/post/${post.slug}`}>
+            {post.title}
+          </Link>
+        </h3>
+        <p className="text-base text-gray-600 dark:text-zinc-400">
+          {post.description}
+        </p>
+        <div className="mt-4">
+          <div className="flex items-center gap-3">
+            <Image src={post.author.image} alt={post.author.name} width={40} height={40} className="rounded-full object-cover" />
+            <div className="flex items-center gap-1.5">
+              <span className="font-bold">{post.author.name}</span>
+              <time dateTime={new Date(post.publishedAt).toString()} className="font-mono ml-1 mt-1 text-sm text-gray-600 dark:text-zinc-400">
+                {formatDate(new Date(post.publishedAt))}
+              </time>
+            </div>
           </div>
         </div>
-        <div className="px-2.5 pb-1.5 rounded-b-lg flex flex-col gap-2 bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90">
-          <h2 className="text-xl lg:text-3xl pt-1.5 font-bold group-hover:text-teal-500 duration-200">
-            {post.title}
-          </h2>
-          <p className="text-slate-800 dark:text-zinc-500">
-            {relativeDate(new Date(post.publishedAt))}
-          </p>
-          <p className="flex items-center gap-2">
-            {post.tags.map((tag, index) => (
-              <span
-                key={index}
-                className="text-zinc-900 dark:text-zinc-500 px-2.5 py-1 dark:bg-zinc-800/10 rounded-full ring-1 ring-white/90 border dark:border-none dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/5 text-sm"
-              >
-                {tag}
-              </span>
-            ))}
-          </p>
-        </div>
-      </Link>
+      </article>
     </div>
   );
 };

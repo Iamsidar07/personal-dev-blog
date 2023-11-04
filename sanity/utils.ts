@@ -4,19 +4,24 @@ interface PrepareQuery {
   type: string;
   tag?: string;
   category?: string;
+  slug?: string;
 }
-export function prepareQuery({ query, category, id, tag, type }: PrepareQuery) {
+export function prepareQuery({ query, category, id, tag, type, slug }: PrepareQuery) {
   const conditions = [`*[_type == "${type}"`];
 
   if (query) {
     conditions.push(`title match "${query}*"`);
   }
 
+  if (slug) {
+    conditions.push(`slug.current == "${slug}"`);
+  }
+
   if (category && category !== "all") {
-    conditions.push(`"${category}" in categories[]->title`);
+    conditions.push(`category == "${category}"`);
   }
   if (tag && tag !== "all") {
-    conditions.push(`"${tag}" in tags[]->title`);
+    conditions.push(`tags == "${tag}"`);
   }
   if (id) {
     conditions.push(`_id == "${id}"`);

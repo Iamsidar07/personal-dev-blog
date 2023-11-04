@@ -14,3 +14,5 @@ export const urlFromParams = (key: string, val: string) => {
 };
 
 export const relativeDate = (date: Date) => dayjs(date).fromNow();
+
+export const formatDate = (date: Date) => dayjs(date).format("MMMM D, YYYY");

@@ -22,9 +22,10 @@ export interface Post {
         image: string,
     },
     mainImage: string,
-    categories: string[],
-    tags: string[],
+    category: string,
+    tags: string,
     publishedAt: Date,
+    description: string,
     body: PortableTextBlock
 }
 
