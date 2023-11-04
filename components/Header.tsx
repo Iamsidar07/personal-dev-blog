@@ -37,7 +37,10 @@ const Header = () => {
             />
           </div>
         </Link>
-        <form className="w-full max-w-lg hidden md:flex" onSubmit={handleSubmit}>
+        <form
+          className="w-full max-w-lg hidden md:flex"
+          onSubmit={handleSubmit}
+        >
           <input
             value={inputText}
             type="text"
@@ -84,12 +87,11 @@ const Header = () => {
             <ToggleButton />
           </div>
           <BiMenuAltRight
-            size={35}
+            size={25}
             className="inline-block sm:hidden cursor-pointer"
             onClick={() => setIsShown((prev) => !prev)}
           />
         </div>
-
       </nav>
     </header>
   );

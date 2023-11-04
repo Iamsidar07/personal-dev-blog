@@ -22,7 +22,7 @@ const Code = ({ value }: any) => {
         {code}
       </SyntaxHighlighter>
       <div
-        className={`absolute top-4 right-4 hidden group-hover:flex cursor-pointer w-8 h-8  items-center justify-center rounded ${
+        className={`absolute top-4 right-4 flex cursor-pointer w-8 h-8  items-center justify-center rounded ${
           isCopied ? "bg-green-900" : "bg-slate-800 "
         }`}
         onClick={() => {
