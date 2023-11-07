@@ -3,7 +3,7 @@ import "../globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Manoj DEV blog",
+  title: "Manoj Kumar",
   description: "Manoj's developer blog where I share my learning.",
   other: {
     "theme-color": "rgb(255,255,255),rgb(24,24,27,1)",
@@ -25,11 +25,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="dark:bg-zinc-900">
+      <body>
         <ThemeProviderComponent>
-          <Header />
-          {children}
-          <Footer />
+          <div className="dark:bg-dark">
+            {" "}
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </ThemeProviderComponent>
       </body>
     </html>

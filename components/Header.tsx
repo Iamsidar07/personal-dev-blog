@@ -24,7 +24,7 @@ const Header = () => {
     router.push(url, { scroll: false });
   };
   return (
-    <header className="z-50 border-b sticky top-0 bg-white dark:bg-zinc-900 dark:border-zinc-800 ">
+    <header className="z-50 border-b sticky top-0 bg-white dark:bg-dark dark:border-gray-800 ">
       <nav className="flex items-center justify-between max-w-7xl mx-auto px-6 py-3">
         <Link href="/">
           <div className="flex items-center w-full">
@@ -38,7 +38,7 @@ const Header = () => {
           </div>
         </Link>
         <form
-          className="w-full max-w-lg hidden md:flex"
+          className="w-full max-w-lg hidden md:flex rounded border bg-white/90 dark:bg-dark dark:bg-opacity-80 dark:border-gray-800 focus-within:dark:border-gray-700"
           onSubmit={handleSubmit}
         >
           <input
@@ -48,11 +48,11 @@ const Header = () => {
             id="input"
             placeholder="Search keyword"
             spellCheck={false}
-            className=" w-full px-3 py-3.5 outline-none border-none bg-white/90 dark:bg-zinc-800/90 ring-1 rounded-lg ring-zinc-900/5 dark:ring-white/10 dark:shadow-lg dark:shadow-zinc-800/90"
+            className=" w-full px-3 py-2.5 outline-none rounded bg-white/90 dark:bg-dark dark:bg-opacity-80"
             onChange={handleChange}
           />
         </form>
-        <ul className="items-center gap-2 rounded-full text-zinc-800 dark:text-zinc-200 bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 shadow-lg shadow-zinc-800/5 px-6 py-3 hidden sm:flex">
+        <ul className="items-center gap-2 rounded-full text-zinc-800 dark:text-zinc-200 bg-white/90 dark:bg-dark ring-1 ring-zinc-900/5 dark:ring-white/10 shadow-lg shadow-zinc-800/5 px-6 py-3 hidden sm:flex">
           <Link href="https://github.com/iamsidar07" target="_blank">
             <li className=" text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer">
               Github
@@ -69,7 +69,7 @@ const Header = () => {
         </ul>
 
         {isShown && (
-          <ul className="flex flex-col absolute top-14 right-4 min-w-[50%] min-h-[150px] h-fit p-4 rounded-2xl items-center gap-2  text-zinc-800 dark:text-zinc-200 bg-white/90 dark:bg-zinc-800/90 ring-1 ring-zinc-900/5 dark:ring-white/10 shadow-lg shadow-zinc-800/5 px-3">
+          <ul className="flex flex-col absolute top-14 right-4 min-w-[50%] min-h-[150px] h-fit p-4 rounded-2xl items-center gap-2  text-zinc-800 dark:text-zinc-200 bg-white/90 dark:bg-dark ring-1 ring-zinc-900/5 dark:ring-white/10 shadow-lg shadow-zinc-800/5 px-3">
             <Link href="https://github.com/iamsidar07" target="_blank">
               <li className="px-3 py-1 text-zinc-900 dark:text-zinc-200 hover:text-teal-600 dark:hover:text-teal-400 duration-200 cursor-pointer">
                 Github

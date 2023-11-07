@@ -18,6 +18,9 @@ const config: Config = {
         syne: ["var(--font-syne)"],
         poppins: ["var(--font-poppins)"],
       },
+      backgroundColor: {
+        dark: "rgb(1,20,35)",
+      },
     },
   },
   plugins: [],
